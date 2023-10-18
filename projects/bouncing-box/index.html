@@ -63,6 +63,7 @@
 			
 			// TODO 2 - Variable declarations 
 			
+			var positionX = 0;
 
 			
 			/* 
@@ -71,8 +72,11 @@
 			turn it around! 
 			*/
 			function update() {
+				/* increase value of positionX by 10 */
+				positionX = positionX + 10
+				var points = 0;
 		    nameofFunction(150)
-            moveBoxTo(boardWidth)
+            moveBoxTo(positionX)
 			};
 
 			/* 
@@ -81,8 +85,9 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
+				positionX = 0
+				points = points + 1
+                changeBoxText(points)
 
 			};
 		})();

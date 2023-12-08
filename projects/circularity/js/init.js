@@ -25,9 +25,9 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
         function drawCircle(){
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-            physikz.addRandomVelocity(circle, canvas);
-            view.addChild(circle);
-            circles.push(circle);  
+physikz.addRandomVelocity(circle, canvas);
+view.addChild(circle);
+circles.push(circle); 
         }
 
         // TODO 3 / 7 : Call the drawCircle() function 
@@ -46,12 +46,17 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
         function update(){
-            physikz.updatePosition([0]);
-            physikz.updatePosition([1]);
-            physikz.updatePosition([2]);
-            physikz.updatePosition([3]);
-            physikz.updatePosition([4]);
-        }
+           
+        
+            
+         
+            // TODO 4 : Update the circle's position //
+            physikz.updatePosition(circle);
+            physikz.updatePosition();
+            physikz.updatePosition();
+            physikz.updatePosition();
+            physikz.updatePosition();
+        }  
             
          
             // TODO 4 : Update the circle's position //
@@ -98,7 +103,7 @@ var init = function (window) {
         
         app.addUpdateable(window.opspark.game);
     }
-};
+    };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

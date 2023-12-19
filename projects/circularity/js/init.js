@@ -31,11 +31,9 @@ var init = function (window) {
         }
 
         // TODO 3 / 7 : Call the drawCircle() function 
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
+        for (var o = 0; o <= 100; o++) {
+            drawCircle()
+        }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -55,7 +53,11 @@ var init = function (window) {
             physikz.updatePosition(circles[2]);
             physikz.updatePosition(circles[3]);
             physikz.updatePosition(circles[4]);
+            for (var i = 0; i < circles.length; i++) {
+                physikz.updatePosition(circles[i])
+                
 
+            }
 
             // TODO 4 : Update the circle's position //
 
@@ -84,11 +86,15 @@ var init = function (window) {
             }
 
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-             if(){
-            
-             }
-
-
+            if (circle.x < 0) {
+                circle.x = canvas
+            }
+            if (circle.y > canvas.height) {
+                circle.y = 0
+            }
+            if (circle.y < 0) {
+                circle.y = canvas
+            }
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
 
@@ -108,9 +114,9 @@ var init = function (window) {
     };
 }
 
-    // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-    if ((typeof process !== 'undefined') &&
-        (typeof process.versions.node !== 'undefined')) {
-        // here, export any references you need for tests //
-        module.exports = init;
-    }
+// DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
+if ((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
+    // here, export any references you need for tests //
+    module.exports = init;
+}
